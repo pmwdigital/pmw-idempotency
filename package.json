@@ -1,0 +1,48 @@
+{
+  "name": "@pmwdigital/idempotency",
+  "version": "0.1.0",
+  "description": "Idempotency keys for payment and refund handlers: call the provider once per key and replay the stored response on retries",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "sql"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmwdigital/pmw-idempotency.git"
+  },
+  "keywords": [
+    "idempotency",
+    "idempotency-key",
+    "payments",
+    "refunds",
+    "retries",
+    "supabase",
+    "edge-functions",
+    "postgres"
+  ]
+}

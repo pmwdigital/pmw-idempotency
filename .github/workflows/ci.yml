@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  ci:
+    uses: pmwdigital/.github/.github/workflows/node-ci.yml@main
+    with:
+      node-version: "22"
+      install-command: "npm ci && test -f dist/index.js"
+      lint-command: ""
+      typecheck-command: "npm run typecheck"
+      test-command: "npm test"
+      build-command: "npm run build"
+  secrets:
+    uses: pmwdigital/.github/.github/workflows/secret-scan.yml@main
